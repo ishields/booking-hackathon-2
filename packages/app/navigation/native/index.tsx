@@ -2,32 +2,33 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import { HomeScreen } from '../../features/home/screen'
 import { UserDetailScreen } from '../../features/user/detail-screen'
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
-const Stack = createNativeStackNavigator<{
-  home: undefined
-  'user-detail': {
-    id: string
-  }
-}>()
+const Drawer = createDrawerNavigator();
+
+// const Stack = createNativeStackNavigator<{
+//   home: undefined
+//   'user-detail': {
+//     id: string
+//   }
+// }>()
 
 export function NativeNavigation() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="home"
-        component={HomeScreen}
-        options={{
-          title: 'Home2',
-        }}
-      />
+    <>
+      <Drawer.Navigator>
+        <Drawer.Screen name="Home" component={HomeScreen}
+                       options={{
+                         title: 'Home',
+                       }}/>
+        <Drawer.Screen name="Settings" component={UserDetailScreen}
+                       options={{
+                         title: 'User',
+                       }}
 
-      <Stack.Screen
-        name="user-detail"
-        component={UserDetailScreen}
-        options={{
-          title: 'User',
-        }}
-      />
-    </Stack.Navigator>
+        />
+      </Drawer.Navigator>
+    </>
+
   )
 }

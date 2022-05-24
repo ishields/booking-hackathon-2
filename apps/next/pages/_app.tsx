@@ -3,8 +3,8 @@ import Head from 'next/head'
 import React from 'react'
 import type { SolitoAppProps } from 'solito'
 import 'raf/polyfill'
-import Layout from 'app/navigation/layout'
-
+// import Layout from 'next/co/'
+import Layout from '../components/layout'
 function MyApp({ Component, pageProps }: SolitoAppProps) {
   return (
     <>
