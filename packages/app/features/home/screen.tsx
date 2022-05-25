@@ -1,6 +1,8 @@
 import { Text, useSx, View, H1, P, Row, A } from 'dripsy'
 import { TextLink } from 'solito/link'
 import { MotiLink } from 'solito/moti'
+import { t } from 'react-native-tailwindcss';
+import { Button, Pressable } from 'react-native'
 
 export function HomeScreen() {
   const sx = useSx()
@@ -9,7 +11,18 @@ export function HomeScreen() {
     <View
       sx={{ flex: 1, justifyContent: 'center', alignItems: 'center', p: 16 }}
     >
-      <H1 sx={{ fontWeight: '800' }}>Welcome to Solito.</H1>
+
+      <View style={[t.absolute, t.inset0, t.p4, t.bgBlue500]}>
+        <Text>Hello</Text>
+      </View>
+
+      <Button title={'hello2'}/>
+
+      <Pressable style={[t.bgGreen400, t.p4]}>
+        <Text>Hello3</Text>
+      </Pressable>
+
+      <H1 sx={{ fontWeight: '800' }}>42Welcome to Solito.</H1>
       <View sx={{ maxWidth: 600 }}>
         <P sx={{ textAlign: 'center' }}>
           2Here is a basic starter to show you how you can navigate from one
